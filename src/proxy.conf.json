@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://localhost:4000",
+    "target": "https://eva-server.herokuapp.com",
     "secure": false,
     "changeOrigin": true
   }
