@@ -8,10 +8,11 @@ import { TeacherService } from 'src/app/services/teacher.service';
 })
 export class TeachersComponent implements OnInit {
 
+	teachers$ = this.teacherService.getTeachersList();
+
   constructor(private teacherService: TeacherService) { }
 
   ngOnInit(): void {
-    this.teacherService.getTeachersList().subscribe(t => console.log(t))
   }
 
 }

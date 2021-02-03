@@ -1,1 +1,1 @@
-<p>teachers works!</p>
+<p *ngFor="let teacher of (teachers$ | async)">{{teacher.name}}</p>
