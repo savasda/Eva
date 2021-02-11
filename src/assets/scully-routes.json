@@ -1,1 +1,1 @@
-[{"route":"/teachers"},{"route":"/"},{"route":"/admin"},{"route":"/admin/login"}]
+[{"route":"/teachers"},{"route":"/"},{"route":"/admin/teachers"},{"route":"/admin/programs"},{"route":"/admin/pages"},{"route":"/admin"},{"route":"/admin/login"}]

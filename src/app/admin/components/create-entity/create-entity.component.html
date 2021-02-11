@@ -1,0 +1,72 @@
+<form *ngIf="entityForm" [formGroup]="entityForm" nz-form>
+	
+<div formGroupName="seo">
+	<nz-divider nzText="SEO" nzOrientation="left"></nz-divider>
+
+	<nz-form-item nzErrorTip="Please input your username!">
+		<nz-form-label nzRequired [nzSpan]="4">Seo title</nz-form-label>
+		<nz-form-control [nzSpan]="20">
+			<input formControlName="title" nz-input placeholder="Введите SEO заголовок" type="text">
+		</nz-form-control>
+	</nz-form-item>
+
+	<nz-form-item>
+		<nz-form-label [nzSpan]="4">Seo keys</nz-form-label>
+		<nz-form-control [nzSpan]="20">
+			<input formControlName="keywords" nz-input placeholder="Введите ключевые слова через запятую" type="text">
+		</nz-form-control>
+	</nz-form-item>
+
+	<nz-form-item nzErrorTip="Please input your username!">
+		<nz-form-label nzRequired [nzSpan]="4">Seo description</nz-form-label>
+		<nz-form-control [nzSpan]="20">
+			<textarea  formControlName="description" placeholder="Введите короткое описание" rows="4" nz-input></textarea>
+		</nz-form-control>
+	</nz-form-item>
+
+</div>
+
+<div>
+	<nz-divider nzText="КОНТЕНТ" nzOrientation="left"></nz-divider>
+
+	<nz-form-item>
+		<nz-form-label nzRequired [nzSpan]="4">Название</nz-form-label>
+		<nz-form-control [nzSpan]="20">
+			<input  formControlName="name" nz-input placeholder="Имя или название" type="text">
+		</nz-form-control>
+	</nz-form-item>
+
+	<nz-form-item>
+		<nz-form-label nzRequired [nzSpan]="4">Полный текст</nz-form-label>
+		<nz-form-control [nzSpan]="20">
+			<ckeditor [editor]="Editor" formControlName="description"></ckeditor>
+		</nz-form-control>
+	</nz-form-item>
+
+</div>
+<div *ngIf="this.programIds.controls.length || this.teacherIds.controls.length">
+	<nz-divider [nzText]="header" nzOrientation="left"></nz-divider>
+	<ng-container formArrayName="programIds">
+		<span *ngFor="let group of this.programIds.controls; index as i">
+			<ng-container [formGroupName]="i">
+				<label formControlName="checked" nz-checkbox>
+					<span>{{group.get('name').value}}</span>
+				</label>
+			</ng-container>
+		</span>
+	</ng-container>
+
+	<ng-container formArrayName="teacherIds">
+		<span *ngFor="let group of this.teacherIds.controls; index as i">
+			<ng-container [formGroupName]="i">
+				<label formControlName="checked" nz-checkbox>
+					<span>{{group.get('name').value}}</span>
+				</label>
+			</ng-container>
+		</span>
+	</ng-container>
+
+</div>
+</form>
+
+

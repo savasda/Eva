@@ -25,12 +25,15 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.less",
-              "node_modules/@taiga-ui/core/styles/taiga-ui-global.less",
-              "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -57,8 +60,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ]
             }
@@ -95,9 +98,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less",
-              "node_modules/@taiga-ui/core/styles/taiga-ui-global.less",
-              "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less"
+              "src/styles.less"
             ],
             "scripts": []
           }

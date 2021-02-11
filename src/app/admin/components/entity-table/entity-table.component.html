@@ -1,0 +1,43 @@
+<ng-container *ngIf="entities.length > 0; else empty">
+
+	<div class="create-button flex">
+		<button nz-button nzType="primary" (click)="onCreate()">Создать</button>
+	</div>
+
+	<nz-table #basicTable [nzData]="entities">
+		<thead>
+			<tr>
+				<th style='width:100%'>Название</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let data of basicTable.data">
+				<td style='width:100%'>{{data.name}}</td>
+				<td class="flex">
+					<a nz-button (click)="update(data)" nzType="link">Редактировать</a>
+					<nz-divider nzType="vertical"></nz-divider>
+					<a nz-button (click)="delete(data._id)" nzType="link">Удалить</a>
+				</td>
+			</tr>
+		</tbody>
+	</nz-table>
+</ng-container>
+
+
+
+<ng-template #empty>
+	<tui-notification class="flex space-between align-center">
+		<div class="flex space-between align-center">
+			<nz-empty nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+				[nzNotFoundContent]="contentTpl" [nzNotFoundFooter]="footerTpl">
+				<ng-template #contentTpl>
+					<span>Список пуст</span>
+				</ng-template>
+				<ng-template #footerTpl>
+					<button nz-button nzType="primary" (click)="onCreate()">Создать</button>
+				</ng-template>
+			</nz-empty>
+		</div>
+	</tui-notification>
+</ng-template>

@@ -2,6 +2,7 @@
   "/api": {
     "target": "https://eva-server.herokuapp.com",
     "secure": false,
-    "changeOrigin": true
+		"changeOrigin": true,
+		"logLevel": "debug"
   }
 }

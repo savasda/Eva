@@ -1,1 +1,6 @@
-<p>pograms works!</p>
+<entity-table 
+	(updateEntity)="updateTeacher($event)"
+	(deleteEntity)="deleteTeacher($event)"
+	(createEntity)="createTeacher()" 
+	[entities]="programs">
+</entity-table>

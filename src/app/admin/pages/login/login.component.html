@@ -1,7 +1,9 @@
+<app-styles></app-styles>
+
 <div class="flex login-container">
   <div class="tui-col_md-4">
-    <tui-island size="l" textAlign="center">
-      <div class="tui-island__content">
+
+		<div class="tui-island__content">
 
         <div *ngIf="loginForm" class="tui-row tui-row_sme">
 
@@ -12,30 +14,23 @@
                 Войти
               </h3>
 
-
+<!-- 
               <tui-notification *ngIf="error" class="tui-space_top-4" status="error">
                 {{error}}
-              </tui-notification>
+              </tui-notification> -->
 
 
               <div class="tui-form__row">
-                <tui-input tuiTextfieldExampleText="Field placeholder" formControlName="username"
-                  tuiHintContent="Имя пользователя">
-                  Имя пользователя
-                  <span class="tui-required"></span>
-                </tui-input>
-                <!-- <tui-field-error formControlName="username"></tui-field-error> -->
+                <input nz-input formControlName="username"
+                  placeholder="Имя пользователя">
               </div>
 
               <div class="tui-form__row">
-                <tui-input-password tuiTextfieldExampleText="Field placeholder" formControlName="password" tuiHintContent="Пароль">
-                  Пароль<span class="tui-required"></span>
-                </tui-input-password >
-                <!-- <tui-field-error formControlName="password"></tui-field-error> -->
+                <input type="password" formControlName="password" placeholder="Пароль">
               </div>
 
               <div class="tui-form__buttons">
-                <button (click)="onSubmit()" tuiButton type="button" class="tui-space_right-4" appearance="primary">
+                <button (click)="onSubmit()" nzButton type="button" class="tui-space_right-4" appearance="primary">
                   primary
                 </button>
               </div>
@@ -45,6 +40,6 @@
 
         </div>
       </div>
-    </tui-island>
-  </div>
+
+		</div>
 </div>

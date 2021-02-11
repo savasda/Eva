@@ -1,28 +1,31 @@
-  <header>
-  4
-  </header>
-  <div class="flex content">
-    <nav>
-      <ul>
-        <li>
-          <a tuiLink href="#">Программы</a>
-        </li>
-        <li>
-          <a tuiLink href="#">Преподователи</a>
-        </li>
-        <li>
-          <a tuiLink href="#">Страницы</a>
-        </li>
-        <li>
-          <a tuiLink href="#">Интеграция</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="content-wrap">
-      <main>
-        12ll
-        <router-outlet></router-outlet>
-      </main>
-    </div>
-
-  </div>
+<app-styles></app-styles>
+<nz-spin [nzSpinning]="loader | async">
+<nz-layout>
+	<nz-sider nzTheme="light" nzCollapsible nzWidth="200px">
+		<div class="logo"></div>
+		<ul nz-menu nzTheme="light" nzMode="inline">
+			<li [routerLink]="['teachers']" nzMatchRouter nz-menu-item>
+				<i nz-icon nzType="usergroup-add" nzTheme="outline"></i>
+				<span>Преподаватели</span>
+			</li>
+			<li routerLink="programs" nzMatchRouter nz-menu-item>
+				<i nz-icon nzType="book" nzTheme="outline"></i>				
+				<span>Программы</span>
+			</li>
+		</ul>
+	</nz-sider>
+	<nz-layout>
+		<nz-header></nz-header>
+		<nz-content>
+			<nz-breadcrumb>
+				<nz-breadcrumb-item>Дашбоард</nz-breadcrumb-item>
+				<nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+			</nz-breadcrumb>
+			<div class="inner-content">
+				<router-outlet></router-outlet>
+			</div>
+		</nz-content>
+		<nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+	</nz-layout>
+</nz-layout>
+</nz-spin>
